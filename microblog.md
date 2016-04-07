@@ -39,13 +39,24 @@ FORMAT: 1A
       + name: Naoyoshi Aikawa (string)
       + account_name: awakia (string)
       + email: n.aikawa91@gmail.com (string)
+  + Response 201
 
-  + Response 201 (application/json)
-      + Headers
-        Location: /users/1
-      + Attribute
-        + id: 1 (number)
-        + name: Naoyoshi Aikawa (string)
+# Update User Data [PUT /users/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Request (application/json)
+    + Attribute
+      + name: Naoyoshi Aikawa (string)
+      + account_name: awakia (string)
+      + email: n.aikawa91@gmail.com (string)
+  + Response 204
+
+# Delete User Data [DELETE /users/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Response 204
 
 # Get User Data [GET /users/{id}]
   + Parameters
