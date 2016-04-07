@@ -1,5 +1,6 @@
 FORMAT: 1A
-# Get User Data List [GET /users]
+# 1 Get User Data List [GET /users]
+ユーザーのリスト一覧を取得
   + Response 200 (application/json)
     + Attribute
         + id: 1 (number) - Id
@@ -8,6 +9,29 @@ FORMAT: 1A
         + email: n.aikawa91@gmail.com (string) - Email
         + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
         + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
+
+# 2 Get User Data List [GET /users]
+この書き方だと複数のAttributeを並べられるかわりにSchemaが自動生成されない。
+(上はされるけど複数並べる記法が調べても見つからない)
++ Response 200 (application/json)
+[
+  {
+    "id": 1,
+    "name": "Naoyoshi Aikawa",
+    "account_name": "awakia",
+    "email": "n.aikawa91@gmail.com",
+    "created_at": "2016-04-07T05:18:02.968Z",
+    "updated_at": "2016-04-07T05:18:02.968Z"
+  },
+  {
+    "id": 2,
+    "name": "Go Takagi",
+    "account_name": "go",
+    "email": "hoge@example.com",
+    "created_at": "2016-04-07T05:18:02.968Z",
+    "updated_at": "2016-04-07T05:18:02.968Z"
+  }
+]
 
 # Create User Data [POST /users]
   + Request (application/json)
