@@ -93,7 +93,7 @@ FORMAT: 1A
       + created_at: `2016-04-07T05:18:02.968Z` (string)
       + updated_at: `2016-04-07T05:18:02.968Z` (string)
 
-# Create User following [POST /followings]
+# Create User followed [POST /followings]
   + Request (application/json)
     + Attribute
         + user_id: 1 (number)
@@ -116,7 +116,16 @@ FORMAT: 1A
         The ID of the desired user.
   + Response 204
 
-# Get User1 blog contents [GET /micro_blogs/{id}]
+# Get User blog contents List [GET /micro_blogs]
+  + Response 200 (application/json)
+    + Attribute
+        + id: 1 (number,required)
+        + user_id: 1 (number)
+        + body: `Hello World!` (string)
+        + created_at: `2016-04-07T05:21:22.809Z` (string)
+        + updated_at: `2016-04-07T05:21:22.809Z` (string)
+
+# Get User blog contents [GET /micro_blogs/{id}]
   + Parameters
     + id (number)
         The ID of the desired user.
@@ -127,3 +136,26 @@ FORMAT: 1A
         + body: `Hello World!` (string)
         + created_at: `2016-04-07T05:21:22.809Z` (string)
         + updated_at: `2016-04-07T05:21:22.809Z` (string)
+
+# Create User blog contents [POST /micro_blogs]
+  + Request (application/json)
+    + Attribute
+        + user_id: 1 (number)
+        + body: `Hello World!` (string)
+  + Response 201
+
+# Update User blog contents [PUT /micro_blogs/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Request (application/json)
+    + Attribute
+        + user_id: 1 (number)
+        + body: `Hello World!` (string)
+  + Response 204
+
+# Delete User blog contents [DELETE /micro_blogs/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Response 204
