@@ -33,6 +33,19 @@ FORMAT: 1A
   }
 ]
 
+# Get User Data [GET /users/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Response 200 (application/json)
+    + Attribute
+      + id: 1 (number, required)
+      + name: Naoyoshi Aikawa (string)
+      + account_name: awakia (string)
+      + email: n.aikawa91@gmail.com (string)
+      + created_at: `2016-04-07T05:18:02.968Z` (string)
+      + updated_at: `2016-04-07T05:18:02.968Z` (string)
+
 # Create User Data [POST /users]
   + Request (application/json)
     + Attribute
@@ -58,23 +71,7 @@ FORMAT: 1A
         The ID of the desired user.
   + Response 204
 
-# Get User Data [GET /users/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 200 (application/json)
-    + Attribute
-        + id: 1 (number, required)
-        + name: Naoyoshi Aikawa (string)
-        + account_name: awakia (string)
-        + email: n.aikawa91@gmail.com (string)
-        + created_at: `2016-04-07T05:18:02.968Z` (string)
-        + updated_at: `2016-04-07T05:18:02.968Z` (string)
-
-# Get User followed list [GET /followings/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
+# Get User followed list [GET /followings]
   + Response 200 (application/json)
     + Attribute
         + id: 1 (number, required)
@@ -82,6 +79,42 @@ FORMAT: 1A
         + followed_user_id: 2 (number)
         + created_at: `2016-04-07T05:21:17.226Z` (string)
         + updated_at: `2016-04-07T05:21:17.226Z` (string)
+
+# Get User followed [GET /followings/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Response 200 (application/json)
+    + Attribute
+      + id: 1 (number, required)
+      + name: Naoyoshi Aikawa (string)
+      + account_name: awakia (string)
+      + email: n.aikawa91@gmail.com (string)
+      + created_at: `2016-04-07T05:18:02.968Z` (string)
+      + updated_at: `2016-04-07T05:18:02.968Z` (string)
+
+# Create User following [POST /followings]
+  + Request (application/json)
+    + Attribute
+        + user_id: 1 (number)
+        + followed_user_id: 2 (number)
+  + Response 201
+
+# Update User followed [PUT /followings/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Request (application/json)
+    + Attribute
+        + user_id: 1 (number)
+        + followed_user_id: 2 (number)
+  + Response 204
+
+# Delete User followed [DELETE /followings/{id}]
+  + Parameters
+    + id (number)
+        The ID of the desired user.
+  + Response 204
 
 # Get User1 blog contents [GET /micro_blogs/{id}]
   + Parameters
