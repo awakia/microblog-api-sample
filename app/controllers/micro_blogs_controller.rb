@@ -1,9 +1,10 @@
 class MicroBlogsController < ApplicationController
+  before_action :set_scope
   before_action :set_micro_blog, only: [:show, :update, :destroy]
 
   # GET /micro_blogs
   def index
-    @micro_blogs = MicroBlog.all
+    @micro_blogs = @scope.all
 
     render json: @micro_blogs
   end
@@ -15,7 +16,7 @@ class MicroBlogsController < ApplicationController
 
   # POST /micro_blogs
   def create
-    @micro_blog = MicroBlog.new(micro_blog_params)
+    @micro_blog = @scope.new(micro_blog_params)
 
     if @micro_blog.save
       render json: @micro_blog, status: :created, location: @micro_blog
@@ -39,9 +40,14 @@ class MicroBlogsController < ApplicationController
   end
 
   private
+    def set_scope
+      @scope = MicroBlog
+      @scope = @scope.where(user_id: params[:user_id]) if params[:user_id].present?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_micro_blog
-      @micro_blog = MicroBlog.find(params[:id])
+      @micro_blog = @scope.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
