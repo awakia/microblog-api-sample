@@ -2,14 +2,14 @@ FORMAT: 1A
 # Get User Data List [GET /users]
 + Response 200 (application/json)
     + Attribute
-        + id: 1 (number)
-        + name: Naoyoshi Aikawa (string)
-        + account_name: awakia (string)
-        + email: n.aikawa91@gmail.com (string)
-        + created_at: `2016-04-07T05:18:02.968Z` (string)
-        + updated_at: `2016-04-07T05:18:02.968Z` (string)
+        + id: 1 (number) - Id
+        + name: Naoyoshi Aikawa (string) - (make Discription)RealName
+        + account_name: awakia (string) - AccountName
+        + email: n.aikawa91@gmail.com (string) - Email
+        + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
+        + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
 
-# Post User Data [POST /users]
+# Create User Data [POST /users]
   + Request (application/json)
     + Attribute
       + name: Naoyoshi Aikawa (string)
