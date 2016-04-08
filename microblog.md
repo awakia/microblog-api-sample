@@ -7,9 +7,11 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 # Users Data [/users]
 
+User accounts
+
 ## Get User Data List [GET]
 
-ユーザーのリスト一覧を取得
+Get User List
 
 + Response 200 (application/json)
     + Attributes (array)
@@ -29,6 +31,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
             + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
 
 ## Create User Data [POST]
+
+Register User
+
 + Request UserData (application/json)
     + Attributes
         + name: Naoyoshi Aikawa (string)
@@ -38,7 +43,12 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 # ID XXX user data [/users/{id}]
 
+User account
+
 ## Get User Data [GET]
+
+Get User account
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
@@ -51,6 +61,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
         + updated_at: `2016-04-07T05:18:02.968Z` (string)
 
 ## Update User Data [PUT]
+
+Update User account
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Request UserData (application/json)
@@ -61,6 +74,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 + Response 204
 
 ## Delete User Data [DELETE]
+
+Delete User account
+
 + Parameters
     + id (number)
         The ID of the desired user.
@@ -68,7 +84,12 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 # Users followed data [/followings]
 
+followings
+
 ## Get User followed list [GET]
+
+Get User followed list
+
 + Response 200 (application/json)
     + Attributes
         + id: 1 (number, required)
@@ -78,6 +99,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
         + updated_at: `2016-04-07T05:21:17.226Z` (string)
 
 ## Create User followed [POST]
+
+Register user followed relation
+
 + Request FollowedData (application/json)
     + Attributes
         + user_id: 1 (number)
@@ -86,7 +110,12 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 # ID XXX followed data [/followings/{id}]
 
+ID XXX followed relation
+
 ## Get User followed [GET]
+
+Get User followed relation
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
@@ -99,6 +128,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
         + updated_at: `2016-04-07T05:18:02.968Z` (string)
 
 ## Update User followed [PUT]
+
+Update User followed relation
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Request FollowedData (application/json)
@@ -108,14 +140,21 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 + Response 204
 
 ## Delete User followed [DELETE]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 204
+
+Delete User followed relation
+
++ Parameters
+    + id (number) - The ID of the desired user.
++ Response 204
 
 # Users blog contents [/micro_blogs]
 
+micro_blogs
+
 ## Get User blog contents List [GET]
+
+Get User blog List
+
 + Response 200 (application/json)
     + Attributes
         + id: 1 (number,required)
@@ -125,6 +164,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
         + updated_at: `2016-04-07T05:21:22.809Z` (string)
 
 ## Create User blog contents [POST]
+
+Create User blog
+
 + Request BlogData (application/json)
     + Attributes
         + user_id: 1 (number)
@@ -133,7 +175,12 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 # ID XXX blog contents [/micro_blogs/{id}]
 
+ID XXX blog data
+
 ## Get User blog contents [GET]
+
+Get User blog contents
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
@@ -145,6 +192,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
         + updated_at: `2016-04-07T05:21:22.809Z` (string)
 
 ## Update User blog contents [PUT]
+
+Update User blog
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Request BlogData (application/json)
@@ -154,6 +204,9 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 + Response 204
 
 ## Delete User blog contents [DELETE]
+
+Delete User blog
+
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 204
