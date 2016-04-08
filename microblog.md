@@ -1,161 +1,159 @@
 FORMAT: 1A
-# 1 Get User Data List [GET /users]
+HOST: http://localhost:3000
+
+# micro_blogs_api
+
+Welcome to the micro blogs API. This API provides access to the micro blogs service.
+
+# Users Data [/users]
+
+## Get User Data List [GET]
+
 ユーザーのリスト一覧を取得
-  + Response 200 (application/json)
-    + Attribute
-        + id: 1 (number) - Id
-        + name: Naoyoshi Aikawa (string) - (make Discription)RealName
-        + account_name: awakia (string) - AccountName
-        + email: n.aikawa91@gmail.com (string) - Email
-        + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
-        + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
 
-# 2 Get User Data List [GET /users]
-この書き方だと複数のAttributeを並べられるかわりにSchemaが自動生成されない。
-(上はされるけど複数並べる記法が調べても見つからない)
 + Response 200 (application/json)
-[
-  {
-    "id": 1,
-    "name": "Naoyoshi Aikawa",
-    "account_name": "awakia",
-    "email": "n.aikawa91@gmail.com",
-    "created_at": "2016-04-07T05:18:02.968Z",
-    "updated_at": "2016-04-07T05:18:02.968Z"
-  },
-  {
-    "id": 2,
-    "name": "Go Takagi",
-    "account_name": "go",
-    "email": "hoge@example.com",
-    "created_at": "2016-04-07T05:18:02.968Z",
-    "updated_at": "2016-04-07T05:18:02.968Z"
-  }
-]
+    + Attributes (array)
+        + (object)
+            + id: 1 (number) - Id
+            + name: Naoyoshi Aikawa (string) - RealName
+            + account_name: awakia (string) - AccountName
+            + email: n.aikawa91@gmail.com (string) - Email
+            + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
+            + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
+        + (object)
+            + id: 2 (number) - Id
+            + name: Go Takagi (string) - RealName
+            + account_name: go (string) - AccountName
+            + email: takagi@shimastripe.com (string) - Email
+            + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
+            + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
 
-# Get User Data [GET /users/{id}]
-  + Parameters
+## Create User Data [POST]
++ Request UserData (application/json)
+    + Attributes
+        + name: Naoyoshi Aikawa (string)
+        + account_name: awakia (string)
+        + email: n.aikawa91@gmail.com (string)
++ Response 201
+
+# ID XXX user data [/users/{id}]
+
+## Get User Data [GET]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Response 200 (application/json)
+    + Attributes
+        + id: 1 (number, required)
+        + name: Naoyoshi Aikawa (string)
+        + account_name: awakia (string)
+        + email: n.aikawa91@gmail.com (string)
+        + created_at: `2016-04-07T05:18:02.968Z` (string)
+        + updated_at: `2016-04-07T05:18:02.968Z` (string)
+
+## Update User Data [PUT]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Request UserData (application/json)
+    + Attributes
+        + name: Naoyoshi Aikawa (string)
+        + account_name: awakia (string)
+        + email: n.aikawa91@gmail.com (string)
++ Response 204
+
+## Delete User Data [DELETE]
++ Parameters
     + id (number)
         The ID of the desired user.
-  + Response 200 (application/json)
-    + Attribute
-      + id: 1 (number, required)
-      + name: Naoyoshi Aikawa (string)
-      + account_name: awakia (string)
-      + email: n.aikawa91@gmail.com (string)
-      + created_at: `2016-04-07T05:18:02.968Z` (string)
-      + updated_at: `2016-04-07T05:18:02.968Z` (string)
++ Response 204
 
-# Create User Data [POST /users]
-  + Request (application/json)
-    + Attribute
-      + name: Naoyoshi Aikawa (string)
-      + account_name: awakia (string)
-      + email: n.aikawa91@gmail.com (string)
-  + Response 201
+# Users followed data [/followings]
 
-# Update User Data [PUT /users/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Request (application/json)
-    + Attribute
-      + name: Naoyoshi Aikawa (string)
-      + account_name: awakia (string)
-      + email: n.aikawa91@gmail.com (string)
-  + Response 204
-
-# Delete User Data [DELETE /users/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 204
-
-# Get User followed list [GET /followings]
-  + Response 200 (application/json)
-    + Attribute
+## Get User followed list [GET]
++ Response 200 (application/json)
+    + Attributes
         + id: 1 (number, required)
         + user_id: 1 (number)
         + followed_user_id: 2 (number)
         + created_at: `2016-04-07T05:21:17.226Z` (string)
         + updated_at: `2016-04-07T05:21:17.226Z` (string)
 
-# Get User followed [GET /followings/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 200 (application/json)
-    + Attribute
-      + id: 1 (number, required)
-      + name: Naoyoshi Aikawa (string)
-      + account_name: awakia (string)
-      + email: n.aikawa91@gmail.com (string)
-      + created_at: `2016-04-07T05:18:02.968Z` (string)
-      + updated_at: `2016-04-07T05:18:02.968Z` (string)
-
-# Create User followed [POST /followings]
-  + Request (application/json)
-    + Attribute
+## Create User followed [POST]
++ Request FollowedData (application/json)
+    + Attributes
         + user_id: 1 (number)
         + followed_user_id: 2 (number)
-  + Response 201
++ Response 201
 
-# Update User followed [PUT /followings/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Request (application/json)
-    + Attribute
+# ID XXX followed data [/followings/{id}]
+
+## Get User followed [GET]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Response 200 (application/json)
+    + Attributes
+        + id: 1 (number, required)
+        + name: Naoyoshi Aikawa (string)
+        + account_name: awakia (string)
+        + email: n.aikawa91@gmail.com (string)
+        + created_at: `2016-04-07T05:18:02.968Z` (string)
+        + updated_at: `2016-04-07T05:18:02.968Z` (string)
+
+## Update User followed [PUT]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Request FollowedData (application/json)
+    + Attributes
         + user_id: 1 (number)
         + followed_user_id: 2 (number)
-  + Response 204
++ Response 204
 
-# Delete User followed [DELETE /followings/{id}]
+## Delete User followed [DELETE]
   + Parameters
     + id (number)
         The ID of the desired user.
   + Response 204
 
-# Get User blog contents List [GET /micro_blogs]
-  + Response 200 (application/json)
-    + Attribute
+# Users blog contents [/micro_blogs]
+
+## Get User blog contents List [GET]
++ Response 200 (application/json)
+    + Attributes
         + id: 1 (number,required)
         + user_id: 1 (number)
         + body: `Hello World!` (string)
         + created_at: `2016-04-07T05:21:22.809Z` (string)
         + updated_at: `2016-04-07T05:21:22.809Z` (string)
 
-# Get User blog contents [GET /micro_blogs/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 200 (application/json)
-    + Attribute
+## Create User blog contents [POST]
++ Request BlogData (application/json)
+    + Attributes
+        + user_id: 1 (number)
+        + body: `Hello World!` (string)
++ Response 201
+
+# ID XXX blog contents [/micro_blogs/{id}]
+
+## Get User blog contents [GET]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Response 200 (application/json)
+    + Attributes
         + id: 1 (number,required)
         + user_id: 1 (number)
         + body: `Hello World!` (string)
         + created_at: `2016-04-07T05:21:22.809Z` (string)
         + updated_at: `2016-04-07T05:21:22.809Z` (string)
 
-# Create User blog contents [POST /micro_blogs]
-  + Request (application/json)
-    + Attribute
+## Update User blog contents [PUT]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Request BlogData (application/json)
+    + Attributes
         + user_id: 1 (number)
         + body: `Hello World!` (string)
-  + Response 201
++ Response 204
 
-# Update User blog contents [PUT /micro_blogs/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Request (application/json)
-    + Attribute
-        + user_id: 1 (number)
-        + body: `Hello World!` (string)
-  + Response 204
-
-# Delete User blog contents [DELETE /micro_blogs/{id}]
-  + Parameters
-    + id (number)
-        The ID of the desired user.
-  + Response 204
+## Delete User blog contents [DELETE]
++ Parameters
+    + id (number) - The ID of the desired user.
++ Response 204
