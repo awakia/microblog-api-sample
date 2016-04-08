@@ -15,20 +15,8 @@ Get User List
 
 + Response 200 (application/json)
     + Attributes (array)
-        + (object)
-            + id: 1 (number) - Id
-            + name: Naoyoshi Aikawa (string) - RealName
-            + account_name: awakia (string) - AccountName
-            + email: n.aikawa91@gmail.com (string) - Email
-            + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
-            + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
-        + (object)
-            + id: 2 (number) - Id
-            + name: Go Takagi (string) - RealName
-            + account_name: go (string) - AccountName
-            + email: takagi@shimastripe.com (string) - Email
-            + created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
-            + updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
+        + (UserData1)
+        + (UserData2)
 
 ## Create User Data [POST]
 
@@ -52,13 +40,7 @@ Get User account
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
-    + Attributes
-        + id: 1 (number, required)
-        + name: Naoyoshi Aikawa (string)
-        + account_name: awakia (string)
-        + email: n.aikawa91@gmail.com (string)
-        + created_at: `2016-04-07T05:18:02.968Z` (string)
-        + updated_at: `2016-04-07T05:18:02.968Z` (string)
+    + Attributes(UserData1)
 
 ## Update User Data [PUT]
 
@@ -91,12 +73,9 @@ followings
 Get User followed list
 
 + Response 200 (application/json)
-    + Attributes
-        + id: 1 (number, required)
-        + user_id: 1 (number)
-        + followed_user_id: 2 (number)
-        + created_at: `2016-04-07T05:21:17.226Z` (string)
-        + updated_at: `2016-04-07T05:21:17.226Z` (string)
+    + Attributes (array)
+        + (UserFollowedData1)
+        + (UserFollowedData2)
 
 ## Create User followed [POST]
 
@@ -119,13 +98,7 @@ Get User followed relation
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
-    + Attributes
-        + id: 1 (number, required)
-        + name: Naoyoshi Aikawa (string)
-        + account_name: awakia (string)
-        + email: n.aikawa91@gmail.com (string)
-        + created_at: `2016-04-07T05:18:02.968Z` (string)
-        + updated_at: `2016-04-07T05:18:02.968Z` (string)
+    + Attributes (UserFollowedData1)
 
 ## Update User followed [PUT]
 
@@ -156,12 +129,9 @@ micro_blogs
 Get User blog List
 
 + Response 200 (application/json)
-    + Attributes
-        + id: 1 (number,required)
-        + user_id: 1 (number)
-        + body: `Hello World!` (string)
-        + created_at: `2016-04-07T05:21:22.809Z` (string)
-        + updated_at: `2016-04-07T05:21:22.809Z` (string)
+    + Attributes (array)
+        + (UserBlogData1)
+        + (UserBlogData2)
 
 ## Create User blog contents [POST]
 
@@ -184,12 +154,7 @@ Get User blog contents
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 200 (application/json)
-    + Attributes
-        + id: 1 (number,required)
-        + user_id: 1 (number)
-        + body: `Hello World!` (string)
-        + created_at: `2016-04-07T05:21:22.809Z` (string)
-        + updated_at: `2016-04-07T05:21:22.809Z` (string)
+    + Attributes (UserBlogData1)
 
 ## Update User blog contents [PUT]
 
@@ -210,3 +175,51 @@ Delete User blog
 + Parameters
     + id (number) - The ID of the desired user.
 + Response 204
+
+# Data Structures
+
+## UserData1 (object)
+
++ id: 1 (number) - Id
++ name: Naoyoshi Aikawa (string) - RealName
++ account_name: awakia (string) - AccountName
++ email: n.aikawa91@gmail.com (string) - Email
++ created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
++ updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
+
+## UserData2 (object)
+
++ id: 2 (number) - Id
++ name: Go Takagi (string) - RealName
++ account_name: go (string) - AccountName
++ email: takagi@shimastripe.com (string) - Email
++ created_at: `2016-04-07T05:18:02.968Z` (string) - CreatedTime
++ updated_at: `2016-04-07T05:18:02.968Z` (string) - UpdatedTime
+
+## UserFollowedData1 (object)
++ id: 1 (number, required)
++ user_id: 1 (number)
++ followed_user_id: 2 (number)
++ created_at: `2016-04-07T05:21:17.226Z` (string)
++ updated_at: `2016-04-07T05:21:17.226Z` (string)
+
+## UserFollowedData2 (object)
++ id: 2 (number, required)
++ user_id: 1 (number)
++ followed_user_id: 3 (number)
++ created_at: `2016-04-07T05:21:17.226Z` (string)
++ updated_at: `2016-04-07T05:21:17.226Z` (string)
+
+## UserBlogData1 (object)
++ id: 1 (number,required)
++ user_id: 1 (number)
++ body: `Hello World!` (string)
++ created_at: `2016-04-07T05:21:22.809Z` (string)
++ updated_at: `2016-04-07T05:21:22.809Z` (string)
+
+## UserBlogData2 (object)
++ id: 2 (number,required)
++ user_id: 2 (number)
++ body: `Hello World!` (string)
++ created_at: `2016-04-07T05:21:22.809Z` (string)
++ updated_at: `2016-04-07T05:21:22.809Z` (string)

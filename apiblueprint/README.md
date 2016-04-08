@@ -283,6 +283,23 @@ HTTP message-headerに設定を指定することができる。
         Content-Type: multipart/form-data, boundary=AaB03x
 ```
 
+## Data Structures section
+
+データ構造の部分を外に出してData Structures以下に定義することで変数化できる。各APIごとのみの変数にすることもネストで可能
+
+```
+# User [/user]
+
++ Attributes (Author)
+
+# Data Structures
+
+## Author (object)
+
++ name: John
++ email: john@appleseed.com
+```
+
 ## apiblueprintの構造 (referenceより)
 
 - [0-1]Metadata Sections
