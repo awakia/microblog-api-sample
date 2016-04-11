@@ -14,6 +14,9 @@ gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# takagi add 20160411
+gem 'factory_girl_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -23,6 +26,9 @@ gem 'puma'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # takagi add 20160411
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
