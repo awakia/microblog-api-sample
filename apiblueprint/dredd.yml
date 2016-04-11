@@ -2,7 +2,7 @@ dry-run: null
 hookfiles: null
 language: ruby
 sandbox: false
-server: bundle exec rails server
+server: api-mock microblog.md --port 4000
 server-wait: 3
 init: false
 custom: {}
