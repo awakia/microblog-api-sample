@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    account_name "MyString"
-    email "MyString"
+    sequence(:name, 0) { |n| "user_#{n}" }
+    sequence(:account_name, 0) { |n| "account_#{n}" }
+    sequence(:email, 0) { |n| "email_#{n}" }
   end
 end
