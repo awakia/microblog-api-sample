@@ -1,4 +1,5 @@
 class MicroBlogsController < ApplicationController
+  before_action :set_scope
   before_action :set_micro_blog, only: [:show, :update, :destroy]
 
   # GET /micro_blogs
