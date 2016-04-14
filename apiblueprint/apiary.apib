@@ -64,7 +64,8 @@ Update User account
         + account_name: awakia (string)
         + email: n.aikawa91@gmail.com (string)
 
-+ Response 204
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (UserData1)
 
 ## Delete User Data [DELETE]
 
@@ -135,7 +136,8 @@ Update User followed relation
         + user_id: 1 (string)
         + followed_user_id: 2 (string)
 
-+ Response 204
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (UserFollowedData1)
 
 ## Delete User followed [DELETE]
 
@@ -206,7 +208,8 @@ Update User blog
         + user_id: 1 (string)
         + body: `Hello World!` (string)
 
-+ Response 204
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (UserBlogData1)
 
 ## Delete User blog contents [DELETE]
 
