@@ -9,15 +9,6 @@ Welcome to the micro blogs API. This API provides access to the micro blogs serv
 
 User accounts
 
-## Get User Data List [GET]
-
-Get User List
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes (array)
-        + (UserData1)
-        + (UserData2)
-
 ## Create User Data [POST]
 
 Register User
@@ -30,6 +21,15 @@ Register User
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes (UserData1)
+
+## Get User Data List [GET]
+
+Get User List
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array)
+        + (UserData1)
+        + (UserData2)
 
 # ID XXX user data [/users/{id}]
 
@@ -82,15 +82,6 @@ Delete User account
 
 followings
 
-## Get User followed list [GET]
-
-Get User followed list
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes (array)
-        + (UserFollowedData1)
-        + (UserFollowedData2)
-
 ## Create User followed [POST]
 
 Register user followed relation
@@ -102,6 +93,15 @@ Register user followed relation
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes (UserFollowedData1)
+
+## Get User followed list [GET]
+
+Get User followed list
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array)
+        + (UserFollowedData1)
+        + (UserFollowedData2)
 
 # ID XXX followed data [/followings/{id}]
 
@@ -153,15 +153,6 @@ Delete User followed relation
 
 micro_blogs
 
-## Get User blog contents List [GET]
-
-Get User blog List
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes (array)
-        + (UserBlogData1)
-        + (UserBlogData2)
-
 ## Create User blog contents [POST]
 
 Create User blog
@@ -173,6 +164,15 @@ Create User blog
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes (UserBlogData1)
+
+## Get User blog contents List [GET]
+
+Get User blog List
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (array)
+        + (UserBlogData1)
+        + (UserBlogData2)
 
 # ID XXX blog contents [/micro_blogs/{id}]
 
