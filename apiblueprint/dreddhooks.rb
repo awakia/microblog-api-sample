@@ -6,7 +6,7 @@ before "Users Data > Get User Data List" do |transaction|
 end
 
 before "Users Data > Create User Data" do |transaction|
-  transaction['skip'] = true
+
 end
 
 before "ID XXX user data > Get User Data" do |transaction|
@@ -26,7 +26,7 @@ before "Users followed data > Get User followed list" do |transaction|
 end
 
 before "Users followed data > Create User followed" do |transaction|
-  transaction['skip'] = true
+
 end
 
 before "ID XXX followed data > Get User followed" do |transaction|
@@ -46,7 +46,7 @@ before "Users blog contents > Get User blog contents List" do |transaction|
 end
 
 before "Users blog contents > Create User blog contents" do |transaction|
-  transaction['skip'] = true
+
 end
 
 before "ID XXX blog contents > Get User blog contents" do |transaction|
