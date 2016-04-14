@@ -27,6 +27,7 @@ Register User
         + name: Naoyoshi Aikawa (string)
         + account_name: awakia (string)
         + email: n.aikawa91@gmail.com (string)
+
 + Response 201
 
 # ID XXX user data [/users/{id}]
@@ -42,6 +43,7 @@ Get User account
         + Members
             + `1`
             + `2`
+
 + Response 200 (application/json)
     + Attributes(UserData1)
 
@@ -60,6 +62,7 @@ Update User account
         + name: Naoyoshi Aikawa (string)
         + account_name: awakia (string)
         + email: n.aikawa91@gmail.com (string)
+
 + Response 204
 
 ## Delete User Data [DELETE]
@@ -95,6 +98,7 @@ Register user followed relation
     + Attributes
         + user_id: 1 (string)
         + followed_user_id: 2 (string)
+
 + Response 201
 
 # ID XXX followed data [/followings/{id}]
@@ -128,6 +132,7 @@ Update User followed relation
     + Attributes
         + user_id: 1 (string)
         + followed_user_id: 2 (string)
+
 + Response 204
 
 ## Delete User followed [DELETE]
@@ -163,6 +168,7 @@ Create User blog
     + Attributes
         + user_id: 1 (string)
         + body: `Hello World!` (string)
+
 + Response 201
 
 # ID XXX blog contents [/micro_blogs/{id}]
@@ -196,6 +202,7 @@ Update User blog
     + Attributes
         + user_id: 1 (string)
         + body: `Hello World!` (string)
+
 + Response 204
 
 ## Delete User blog contents [DELETE]
